@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AdsDemo</string>
+
+    <string name="google_app_id">ca-app-pub-3940256099942544~3347511713</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="interstitials_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="rewarded_video_ad_unit_id">"ca-app-pub-3940256099942544/5224354917"</string>
+    <string name="sample_ad_unit_id">"ca-app-pub-3940256099942544/2177256514"</string>
+
+</resources>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.aiyamamoto.adsdemo.MainActivity">
+
+    <Button
+        android:id="@+id/btn_google_banner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google Banner Ads"
+        android:onClick="goToGoogleBanner"/>
+
+    <Button
+        android:id="@+id/btn_google_interstitial"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google Interstitial Ads"
+        android:onClick="goToGoogleInterstitial"/>
+
+    <Button
+        android:id="@+id/btn_google_rewarded_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google Rewarded Video Ads"
+        android:onClick="goToGoogleRewardedVideo"/>
+
+    <Button
+        android:id="@+id/btn_google_native_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Google Native Ads Advanced (Unified)"
+        android:onClick="goToGoogleNativeAds"/>
+
+</LinearLayout>
