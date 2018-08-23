@@ -34,4 +34,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GoogleNativeAdsActivity.class);
         startActivity(intent);
     }
+
+    public void goToSmaatoBannerAds(View view) {
+        Intent intent = new Intent(this, SmaatoBannerAdsActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToSmaatoNativeAds(View view) {
+        Intent intent = new Intent(this, SmaatoNativeAdsActivity.class);
+        startActivity(intent);
+    }
 }
