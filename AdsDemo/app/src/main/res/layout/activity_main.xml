@@ -49,6 +49,19 @@
         android:text="Smaato Native Ads"
         android:onClick="goToSmaatoNativeAds"/>
 
+    <Button
+        android:id="@+id/btn_mopub_banner_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mopub Banner Ads"
+        android:onClick="goToMopubBannerAds"/>
+
+    <Button
+        android:id="@+id/btn_mopub_native_ads"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mopub Native Ads(Manual)"
+        android:onClick="goToMopubNativeAds"/>
 
 
 

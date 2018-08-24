@@ -44,6 +44,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~3347511713")
+        var sdkConfig : MPMoPubConfiguration!
+        
+        
     }
 
 }

@@ -44,4 +44,14 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SmaatoNativeAdsActivity.class);
         startActivity(intent);
     }
+
+    public void goToMopubBannerAds(View view) {
+        Intent intent = new Intent(this, MopubBannerAdsActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToMopubNativeAds(View view) {
+        Intent intent = new Intent(this, MopubNativeAdsActivity.class);
+        startActivity(intent);
+    }
 }

@@ -39,52 +39,54 @@
             android:configChanges="keyboardHidden|orientation|screenSize" />
 
         <!-- Mopub -->
-        <!--<activity-->
-            <!--android:name="com.mopub.mobileads.MoPubActivity"-->
-            <!--android:configChanges="keyboardHidden|orientation|screenSize" />-->
-        <!--<activity-->
-            <!--android:name="com.mopub.mobileads.MraidActivity"-->
-            <!--android:configChanges="keyboardHidden|orientation|screenSize" />-->
-        <!--<activity-->
-            <!--android:name="com.mopub.common.MoPubBrowser"-->
-            <!--android:configChanges="keyboardHidden|orientation|screenSize" />-->
-        <!--<activity-->
-            <!--android:name="com.mopub.mobileads.MraidVideoPlayerActivity"-->
-            <!--android:configChanges="keyboardHidden|orientation|screenSize" />-->
+        <!-- <activity -->
+        <!-- android:name="com.mopub.mobileads.MoPubActivity" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize" /> -->
+        <!-- <activity -->
+        <!-- android:name="com.mopub.mobileads.MraidActivity" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize" /> -->
+        <!-- <activity -->
+        <!-- android:name="com.mopub.common.MoPubBrowser" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize" /> -->
+        <!-- <activity -->
+        <!-- android:name="com.mopub.mobileads.MraidVideoPlayerActivity" -->
+        <!-- android:configChanges="keyboardHidden|orientation|screenSize" /> -->
 
 
         <!-- MoPub's consent dialog -->
         <activity
             android:name="com.mopub.common.privacy.ConsentDialogActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"/>
+            android:configChanges="keyboardHidden|orientation|screenSize" />
 
         <!-- All ad formats -->
         <activity
             android:name="com.mopub.common.MoPubBrowser"
-            android:configChanges="keyboardHidden|orientation|screenSize"/>
+            android:configChanges="keyboardHidden|orientation|screenSize" />
 
         <!-- Interstitials -->
         <activity
             android:name="com.mopub.mobileads.MoPubActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"/>
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name="com.mopub.mobileads.MraidActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"/>
+            android:configChanges="keyboardHidden|orientation|screenSize" />
 
         <!-- Rewarded Video and Rewarded Playables -->
         <activity
             android:name="com.mopub.mobileads.RewardedMraidActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"/>
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity
             android:name="com.mopub.mobileads.MraidVideoPlayerActivity"
-            android:configChanges="keyboardHidden|orientation|screenSize"/>
-
+            android:configChanges="keyboardHidden|orientation|screenSize" />
         <activity android:name=".SmaatoBannerAdsActivity" />
-        <activity android:name=".SmaatoNativeAdsActivity"></activity>
+        <activity android:name=".SmaatoNativeAdsActivity" />
 
-        <meta-data android:name="com.google.android.gms.version"
+        <meta-data
+            android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
+        <activity android:name=".MopubBannerAdsActivity" />
+        <activity android:name=".MopubNativeAdsActivity"></activity>
     </application>
 
 </manifest>

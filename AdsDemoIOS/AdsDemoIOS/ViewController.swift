@@ -11,11 +11,10 @@ import UIKit
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var table: UITableView!
-    var tableData:[String] = ["Google Banner Ads","Google Native Ads","Item 3"]
+    var tableData:[String] = ["Google Banner","Google Native","Smaato Banner", "Smaato Toaster", "Smaato Native", "Mopub Banner"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         table.delegate = self
         table.dataSource = self
     }
@@ -31,7 +30,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         var cell: UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        if cell == nil {
+        if cell != nil {
             cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         }
         cell.textLabel?.text = tableData[indexPath.row]
@@ -50,15 +49,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             performSegue(withIdentifier: "goToGoogleNativeAdsVC", sender: nil)
             break
         case 2:
-            performSegue(withIdentifier: "goToGoogleBannerAdsVC", sender: nil)
+            performSegue(withIdentifier: "goToSmaatoAdsVC", sender: nil)
             break
         case 3:
-            performSegue(withIdentifier: "goToGoogleBannerAdsVC", sender: nil)
+            performSegue(withIdentifier: "goToSmaatoToasterAdsVC", sender: nil)
             break
         case 4:
-            performSegue(withIdentifier: "goToGoogleBannerAdsVC", sender: nil)
+            performSegue(withIdentifier: "goToSmaatoNativeAdsVC", sender: nil)
             break
 
+        case 5:
+            performSegue(withIdentifier: "goToMopubBannerAdsVC", sender: nil)
+            break
+            
         default:
             break
         }
