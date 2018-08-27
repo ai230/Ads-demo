@@ -54,6 +54,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mopub Banner Ads"
+        android:enabled="false"
         android:onClick="goToMopubBannerAds"/>
 
     <Button
@@ -61,6 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mopub Native Ads(Manual)"
+        android:enabled="false"
         android:onClick="goToMopubNativeAds"/>
 
 

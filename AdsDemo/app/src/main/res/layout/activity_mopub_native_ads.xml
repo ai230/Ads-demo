@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/native_outer_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:textDirection="locale">
+
+    <FrameLayout
+        android:id="@+id/conteiner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        ></FrameLayout>
+
+    <TextView
+        android:id="@+id/loadingTxt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/load_ad_btn"
+        android:textAlignment="center"
+        android:text="Loading..."/>
+
+    <Button
+        android:id="@+id/load_ad_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Load ad"
+        android:layout_alignParentBottom="true"
+        android:onClick="loadNativeMopubAd"/>
+</RelativeLayout>

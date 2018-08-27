@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:BannerView="http://schemas.android.com/apk/res-auto"
+    tools:context="com.aiyamamoto.adsdemo.SmaatoBannerAdsActivity">
+
+    <Button
+        android:id="@+id/load_ad"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="0"
+        android:text="Load Banner"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        android:onClick="loadBannerAd"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true" >
+
+        <com.smaato.soma.BannerView
+            android:id="@+id/bannerView"
+            android:layout_width="320dip"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            BannerView:AdType="ALL"
+            BannerView:age="30"
+            BannerView:autoReloadFrequency="20"
+            BannerView:backgroundColor="#80000000"
+            BannerView:gender="M"
+            BannerView:keywordList="Car,Racing,Game"
+            BannerView:latitude="37.787827"
+            BannerView:locationUpdateEnabled="true"
+            BannerView:longitude="-122.406728"
+            BannerView:loadNewBanner="true">
+        </com.smaato.soma.BannerView>
+    </RelativeLayout>
+</RelativeLayout>

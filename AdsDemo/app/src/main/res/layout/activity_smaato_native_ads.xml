@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.aiyamamoto.adsdemo.SmaatoNativeAdsActivity">
+
+    <Button
+        android:id="@+id/load_ad"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:text="load banner"
+        android:onClick="loadNativeAd"/>
+
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/load_ad"
+        android:layout_alignLeft="@+id/load_ad"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/load_ad">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ratingBarNative_1"
+                    android:src="@drawable/cat1"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:text="Cat cat cat" />
+
+
+
+                <RatingBar
+                    android:id="@+id/ratingBarNative_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView1"
+                    android:layout_alignParentLeft="true"
+                    android:rating="4.9"
+                    android:numStars="5"
+                    style="?android:attr/ratingBarStyleSmall"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nativeAdLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center" >
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ratingBarNative_2"
+                    android:src="@drawable/cat2"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:text="Cat cat cat" />
+
+
+
+                <RatingBar
+                    android:id="@+id/ratingBarNative_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView2"
+                    android:layout_alignParentLeft="true"
+                    android:rating="4.9"
+                    android:numStars="5"
+                    style="?android:attr/ratingBarStyleSmall"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nativeAdLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center" >
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ratingBarNative_3"
+                    android:src="@drawable/cat1"
+                    android:adjustViewBounds="true"/>
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:textStyle="bold"
+                    android:textSize="25sp"
+                    android:text="Cat cat cat" />
+
+                <RatingBar
+                    android:id="@+id/ratingBarNative_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView3"
+                    android:layout_alignParentLeft="true"
+                    android:rating="4.9"
+                    android:numStars="5"
+                    style="?android:attr/ratingBarStyleSmall"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/nativeAdLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_gravity="center" >
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+</RelativeLayout>
