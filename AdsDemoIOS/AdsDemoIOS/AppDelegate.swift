@@ -8,6 +8,7 @@
 
 import UIKit
 import GoogleMobileAds
+import MoPub
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        var sdkConfig : MPMoPubConfiguration!
+        sdkConfig = MPMoPubConfiguration.init(adUnitIdForAppInitialization: "23b49916add211e281c11231392559e4")
+        sdkConfig.globalMediationSettings = []
+        MoPub.sharedInstance().initializeSdk(with: sdkConfig, completion: nil)
+        
         return true
     }
 
@@ -44,7 +50,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func applicationDidFinishLaunching(_ application: UIApplication) {
         GADMobileAds.configure(withApplicationID: "ca-app-pub-3940256099942544~3347511713")
-        var sdkConfig : MPMoPubConfiguration!
+        
         
         
     }

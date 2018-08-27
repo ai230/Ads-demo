@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003F774C21346683001F081B /* MPUBMoatMobileAppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 003F774B21346683001F081B /* MPUBMoatMobileAppKit.framework */; };
+		003F774E213466BF001F081B /* libAvid-mopub-3.6.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 003F774D213466BF001F081B /* libAvid-mopub-3.6.1.a */; };
 		00FF9849212DCC9F001F32AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF9848212DCC9F001F32AD /* AppDelegate.swift */; };
 		00FF984B212DCC9F001F32AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00FF984A212DCC9F001F32AD /* ViewController.swift */; };
 		00FF984E212DCC9F001F32AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00FF984C212DCC9F001F32AD /* Main.storyboard */; };
@@ -244,6 +246,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		003F774B21346683001F081B /* MPUBMoatMobileAppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MPUBMoatMobileAppKit.framework; path = "Pods/mopub-ios-sdk/MoPubSDK/Viewability/MOAT/MPUBMoatMobileAppKit.framework"; sourceTree = "<group>"; };
+		003F774D213466BF001F081B /* libAvid-mopub-3.6.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libAvid-mopub-3.6.1.a"; path = "Pods/mopub-ios-sdk/MoPubSDK/Viewability/Avid/libAvid-mopub-3.6.1.a"; sourceTree = "<group>"; };
 		00FF9845212DCC9F001F32AD /* AdsDemoIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdsDemoIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		00FF9848212DCC9F001F32AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		00FF984A212DCC9F001F32AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -723,7 +727,9 @@
 				00FF9B3F212FF66F001F32AD /* StoreKit.framework in Frameworks */,
 				00FF9B41212FF677001F32AD /* SystemConfiguration.framework in Frameworks */,
 				00FF9B43212FF67D001F32AD /* UIKit.framework in Frameworks */,
+				003F774C21346683001F081B /* MPUBMoatMobileAppKit.framework in Frameworks */,
 				00FF9B45212FF685001F32AD /* WebKit.framework in Frameworks */,
+				003F774E213466BF001F081B /* libAvid-mopub-3.6.1.a in Frameworks */,
 				248D1D8331E8D1875735FF1F /* Pods_AdsDemoIOS.framework in Frameworks */,
 				00FF9A8C212FF5C2001F32AD /* MPUBMoatMobileAppKit.framework in Frameworks */,
 				00FF9A8B212FF5C2001F32AD /* libAvid-mopub-3.6.1.a in Frameworks */,
@@ -738,6 +744,8 @@
 		00FF983C212DCC9F001F32AD = {
 			isa = PBXGroup;
 			children = (
+				003F774D213466BF001F081B /* libAvid-mopub-3.6.1.a */,
+				003F774B21346683001F081B /* MPUBMoatMobileAppKit.framework */,
 				00FF98A7212FF5C1001F32AD /* MoPubSDK */,
 				00FF9847212DCC9F001F32AD /* AdsDemoIOS */,
 				00FF9846212DCC9F001F32AD /* Products */,
@@ -1917,8 +1925,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27FMSEL89M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/mopub-ios-sdk/MoPubSDK/Viewability/MOAT",
+				);
 				INFOPLIST_FILE = AdsDemoIOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/mopub-ios-sdk/MoPubSDK/Viewability/Avid",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aiyamamoto.AdsDemoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/ISoma-Bridging-Header.h";
@@ -1934,8 +1953,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27FMSEL89M;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/mopub-ios-sdk/MoPubSDK/Viewability/MOAT",
+				);
 				INFOPLIST_FILE = AdsDemoIOS/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/mopub-ios-sdk/MoPubSDK/Viewability/Avid",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.aiyamamoto.AdsDemoIOS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "$(SRCROOT)/$(PROJECT)/ISoma-Bridging-Header.h";

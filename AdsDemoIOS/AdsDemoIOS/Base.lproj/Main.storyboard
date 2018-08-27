@@ -73,20 +73,47 @@
             </objects>
             <point key="canvasLocation" x="137" y="931"/>
         </scene>
-        <!--View Controller-->
+        <!--Mopub Banner Ads View Controller-->
         <scene sceneID="OSs-EJ-30C">
             <objects>
-                <viewController id="sdQ-dy-U55" sceneMemberID="viewController">
+                <viewController id="sdQ-dy-U55" customClass="MopubBannerAdsViewController" customModule="AdsDemoIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Ec-xE-yd0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H1M-sY-8vJ">
+                                <rect key="frame" x="0.0" y="64" width="375" height="527"/>
+                                <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CFs-Jv-LmR">
+                                <rect key="frame" x="0.0" y="573" width="375" height="74"/>
+                                <state key="normal" title="Load ads"/>
+                                <connections>
+                                    <action selector="loadAdsClicked:" destination="sdQ-dy-U55" eventType="touchUpInside" id="Sf3-a8-ZTC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BB2-Kg-HfF" firstAttribute="bottom" secondItem="H1M-sY-8vJ" secondAttribute="bottom" constant="76" id="0Dy-ew-CoF"/>
+                            <constraint firstAttribute="bottom" secondItem="CFs-Jv-LmR" secondAttribute="bottom" constant="20" symbolic="YES" id="Dt6-tx-kwE"/>
+                            <constraint firstAttribute="trailing" secondItem="H1M-sY-8vJ" secondAttribute="trailing" id="Efu-8J-Jtu"/>
+                            <constraint firstItem="H1M-sY-8vJ" firstAttribute="leading" secondItem="CFs-Jv-LmR" secondAttribute="leading" id="F4r-LZ-D63"/>
+                            <constraint firstItem="H1M-sY-8vJ" firstAttribute="top" secondItem="BB2-Kg-HfF" secondAttribute="top" id="I5s-Fo-YmW"/>
+                            <constraint firstItem="H1M-sY-8vJ" firstAttribute="trailing" secondItem="CFs-Jv-LmR" secondAttribute="trailing" id="Ke2-Of-c4S"/>
+                            <constraint firstItem="CFs-Jv-LmR" firstAttribute="top" secondItem="BB2-Kg-HfF" secondAttribute="top" constant="509" id="Ycm-E7-Gdt"/>
+                            <constraint firstItem="H1M-sY-8vJ" firstAttribute="leading" secondItem="4Ec-xE-yd0" secondAttribute="leading" id="djM-Y3-F3l"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="BB2-Kg-HfF"/>
                     </view>
+                    <connections>
+                        <outlet property="containerView" destination="H1M-sY-8vJ" id="iRw-AU-Od0"/>
+                        <outlet property="loadAdBtn" destination="CFs-Jv-LmR" id="OA7-Gj-TjF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ehr-z8-Cmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="86" y="1720"/>
+            <point key="canvasLocation" x="85.599999999999994" y="1719.4902548725638"/>
         </scene>
         <!--Google native ads-->
         <scene sceneID="sQG-1E-bE2">
@@ -207,7 +234,6 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3dy-9i-XLd">
                                 <rect key="frame" x="0.0" y="64" width="375" height="300"/>
-                                <color key="backgroundColor" red="0.28152725099999998" green="0.74871546030000002" blue="0.67473518850000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

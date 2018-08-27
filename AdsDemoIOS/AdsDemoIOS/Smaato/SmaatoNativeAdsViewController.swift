@@ -8,23 +8,20 @@
 
 import UIKit
 
-class SmaatoNativeAdsViewController: UIViewController {
-    
-    
+class SmaatoNativeAdsViewController: UIViewController, SOMANativeAdDelegate {
+
     @IBOutlet weak var conteinerView: UIView!
     var nativeAd: SOMANativeAd!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        nativeAd = SOMANativeAd()
-        nativeAd.registerView(forUserInteraction: conteinerView)
-        nativeAd.adSettings.publisherId = 0
-        nativeAd.adSettings.adSpaceId = 0
-        nativeAd.layout = SOMANativeAdLayoutContentWall
-//        nativeAd = self
-        
+        nativeAd = SOMANativeAd(publisherId: "0", adSpaceId: "0")
+        nativeAd.delegate = self
+        nativeAd.layout = SOMANativeAdLayoutContentStream;
+        conteinerView.addSubview(nativeAd)
         nativeAd.load()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,21 +30,20 @@ class SmaatoNativeAdsViewController: UIViewController {
     }
     
 
-//    func somaNativeAdDidLoad(_ nativeAd: SOMANativeAd!) {
-////        nativeAd.registerView(forUserInteraction: conteinerView)
-//    }
-//
-//    func somaNativeAdDidFailed(_ nativeAd: SOMANativeAd!, withError error: Error!) {
-//
-//    }
-//
-//    func somaNativeAdShouldEnterFullScreen(_ nativeAd: SOMANativeAd!) -> Bool {
-//
-//        return true
-//    }
-//
-//    func somaRootViewController() -> UIViewController! {
-//        return self
-//    }
+    func somaNativeAdDidLoad(_ nativeAd: SOMANativeAd!) {
+        nativeAd.registerView(forUserInteraction: conteinerView)
+    }
+
+    func somaNativeAdDidFailed(_ nativeAd: SOMANativeAd!, withError error: Error!) {
+
+    }
+
+    func somaNativeAdShouldEnterFullScreen(_ nativeAd: SOMANativeAd!) -> Bool {
+        return true
+    }
+    
+    func somaRootViewController() -> UIViewController! {
+        return self
+    }
 
 }
