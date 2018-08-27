@@ -7,14 +7,26 @@
 //
 
 import UIKit
+import MoPub
 
-class MopubBannerAdsViewController: UIViewController {
-
+class MopubBannerAdsViewController: UIViewController, MPAdViewDelegate {
+    func viewControllerForPresentingModalView() -> UIViewController! {
+        return self
+    }
+    
+    var adView :MPAdView!
+    
+ 
+    @IBOutlet weak var loadAdBtn: UIButton!
+    @IBOutlet weak var containerView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        adView = MPAdView(adUnitId: "23b49916add211e281c11231392559e4", size: MOPUB_BANNER_SIZE)
+        adView.delegate = self
+        containerView.addSubview(adView)
+        adView.loadAd()
     }
 
     override func didReceiveMemoryWarning() {
@@ -23,14 +35,17 @@ class MopubBannerAdsViewController: UIViewController {
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    
+    func adViewDidLoadAd(_ view: MPAdView!) {
+        
     }
-    */
 
+    func adViewDidFail(toLoadAd view: MPAdView!) {
+        
+    }
+    
+    @IBAction func loadAdsClicked(_ sender: Any) {
+        containerView.addSubview(adView)
+        adView.loadAd()
+    }
 }
