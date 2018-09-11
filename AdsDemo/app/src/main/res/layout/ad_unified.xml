@@ -9,8 +9,7 @@
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:paddingEnd="5dp"
-        android:paddingRight="5dp"
-        android:background="#dbf4f7">
+        android:paddingRight="5dp">
 
         <TextView style="@style/AppTheme.AdAttribution"/>
 

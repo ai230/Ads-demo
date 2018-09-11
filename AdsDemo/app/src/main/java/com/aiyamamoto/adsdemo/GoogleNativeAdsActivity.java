@@ -33,6 +33,7 @@ public class GoogleNativeAdsActivity extends AppCompatActivity {
 
     AdLoader adLoader;
     private Button refresh;
+    private TextView loadingText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class GoogleNativeAdsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_google_native_ads);
 
         refresh = findViewById(R.id.btn_refresh);
+        loadingText = (TextView) findViewById(R.id.native_loadingText);
 
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,52 +52,6 @@ public class GoogleNativeAdsActivity extends AppCompatActivity {
 
         refreshAd();
 
-//        adLoader = new AdLoader.Builder(this, ADMOB_AD_UNIT_ID)
-//                .forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
-//                    @Override
-//                    public void onUnifiedNativeAdLoaded(UnifiedNativeAd unifiedNativeAd) {
-//                        // Show the ad.
-//                        // Assumes you have a placeholder FrameLayout in your View layout
-//                        // (with id fl_adplaceholder) where the ad is to be placed.
-//                        FrameLayout frameLayout =
-//                                findViewById(R.id.fl_adplaceholder);
-//                        // Assumes that your ad layout is in a file call ad_unified.xml
-//                        // in the res/layout folder
-//                        UnifiedNativeAdView adView = (UnifiedNativeAdView) getLayoutInflater()
-//                                .inflate(R.layout.ad_unified, null);
-//
-//                        frameLayout.removeAllViews();
-//                        frameLayout.addView(adView);
-//
-//
-//                        if (adLoader.isLoading()) {
-//                            // The AdLoader is still loading ads.
-//                            // Expect more adLoaded or onAdFailedToLoad callbacks.
-//                        } else {
-//                            // The AdLoader has finished loading ads.
-//                        }
-//                    }
-//                })
-//                .withAdListener(new AdListener() {
-//                    // optional method
-//                    // AdListener callbacks like OnAdFailedToLoad, OnAdOpened, and so on,
-//                    // can be overridden here.
-//                    @Override
-//                    public void onAdFailedToLoad(int errorCode) {
-//                        // Handle the failure by logging, altering the UI, and so on.
-//                        Toast.makeText(GoogleNativeAdsActivity.this, "Failed to load native ad: "
-//                                + errorCode, Toast.LENGTH_SHORT).show();
-//                    }
-//                })
-//                .withNativeAdOptions(new NativeAdOptions.Builder()
-//                        // optional method
-//                        // Methods in the NativeAdOptions.Builder class can be
-//                        // used here to specify individual options settings.
-//                        .build())
-//                .build();
-
-//        loadAd();
-//        displayUnifiedNativeAd();
     }
 
     private void loadAd() {
@@ -196,7 +152,7 @@ public class GoogleNativeAdsActivity extends AppCompatActivity {
 
     private void refreshAd() {
         refresh.setEnabled(false);
-
+        loadingText.setText("Loading...");
         AdLoader.Builder builder = new AdLoader.Builder(this, ADMOB_AD_UNIT_ID);
 
         builder.forUnifiedNativeAd(new UnifiedNativeAd.OnUnifiedNativeAdLoadedListener() {
@@ -210,9 +166,18 @@ public class GoogleNativeAdsActivity extends AppCompatActivity {
                 populateUnifiedNativeAdView(unifiedNativeAd, adView);
                 frameLayout.removeAllViews();
                 frameLayout.addView(adView);
+                loadingText.setText("Loaded!");
             }
 
         });
+
+//        builder.withAdListener(new AdListener() {
+//            @Override
+//            public void onAdFailedToLoad(int errorCode) {
+//                // Handle the failure by logging, altering the UI, and so on.
+//                loadingText.setText("Loaded failed! Try again..");
+//            }
+//        });
 
 //        VideoOptions videoOptions = new VideoOptions.Builder()
 //                .setStartMuted(startVideoAdsMuted.isChecked())
@@ -228,6 +193,7 @@ public class GoogleNativeAdsActivity extends AppCompatActivity {
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 refresh.setEnabled(true);
+                loadingText.setText("Load faild! try again!");
                 Toast.makeText(GoogleNativeAdsActivity.this, "Failed to load native ad: "
                         + errorCode, Toast.LENGTH_SHORT).show();
             }

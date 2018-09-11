@@ -13,12 +13,14 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <TextView
-        android:id="@+id/timer"
+        android:id="@+id/loadingTxt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/title"
+        android:layout_marginTop="10dp"
         android:layout_centerHorizontal="true"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="Loading..."
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <Button
         android:id="@+id/showAdBtn"

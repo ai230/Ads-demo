@@ -10,6 +10,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.ads.AdListener;
@@ -21,6 +22,7 @@ public class GoogleInterstialAdsActivity extends AppCompatActivity {
     private InterstitialAd mInterstitialAd;
 
     private Button showAdBtn;
+    private TextView loadingText;
     private CountDownTimer countDownTimer;
     private boolean gameIsInProgress;
     private long timerMilliseconds;
@@ -32,6 +34,7 @@ public class GoogleInterstialAdsActivity extends AppCompatActivity {
 
         showAdBtn = (Button) findViewById(R.id.showAdBtn);
         showAdBtn.setVisibility(View.INVISIBLE);
+        loadingText = (TextView) findViewById(R.id.loadingTxt);
 
         // Initialize the Mobile Ads SDK.
         MobileAds.initialize(this, String.valueOf(R.string.google_app_id));
@@ -46,12 +49,15 @@ public class GoogleInterstialAdsActivity extends AppCompatActivity {
             public void onAdLoaded() {
                 // Code to be executed when an ad finishes loading.
                 showAdBtn.setVisibility(View.VISIBLE);
+                loadingText.setText("Ad is ready! Click the button below!");
             }
 
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
                 // Code to be executed when an ad request fails.
+                showAdBtn.setVisibility(View.INVISIBLE);
+                loadingText.setText("Load failed...");
             }
 
             @Override
@@ -76,6 +82,7 @@ public class GoogleInterstialAdsActivity extends AppCompatActivity {
 
     private void loadAd() {
         showAdBtn.setVisibility(View.INVISIBLE);
+        loadingText.setText("Loading...");
         if (!mInterstitialAd.isLoading() && !mInterstitialAd.isLoaded()) {
             AdRequest adRequest = new AdRequest.Builder().build();
             mInterstitialAd.loadAd(adRequest);
